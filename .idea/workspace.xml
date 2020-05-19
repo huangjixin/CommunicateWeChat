@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0fb6b7ab-5967-4fb7-921a-5081a8d89d47" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/communicateWechat.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/CommunicateWeChatApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/CommunicateWeChatApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sk/SktServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sk/SktServer.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +25,7 @@
   <component name="PropertiesComponent">
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
