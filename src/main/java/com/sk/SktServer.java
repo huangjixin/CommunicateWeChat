@@ -1,5 +1,8 @@
 package com.sk;
 
+import com.ultrapower.umap.entity.factor.WeChatMsgSend;
+import com.wechat.send.WeChatUrlData;
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -74,6 +77,10 @@ public class SktServer {
                 fileOutputStream.write(info.getBytes());
 
                 ZipUtil.ZipFileAndEncrypt("/Users/pengchenyi/Downloads/encrypt", "version.zip", "szhbyjs");
+
+
+                String []users = {"HuangJixin","XuYanhong1","ZhangZhicheng"};
+                this.sendToWechat(users,"Hello，world");
             } catch (IOException e) {
                 e.printStackTrace();
             } finally {
@@ -107,6 +114,32 @@ public class SktServer {
                 }
             }
 
+        }
+
+        /**
+         * 发送到微信。
+         */
+        private void sendToWechat(String[] receiveUsers, String msg) {
+            WeChatMsgSend swx = new WeChatMsgSend();
+            try {
+                String token = swx.getToken("wwdf8f60f186c3bdbf", "I0DWzXr2ZkU8jCOhjy6TlxkPvJUndldKAw5qakEMIXI");
+                System.out.println("获取到的token======>" + token);
+
+                String postdata = null;
+                String resp = null;
+
+                for (int i = 0; i < receiveUsers.length; i++) {
+                    String name = receiveUsers[i];
+
+                    postdata = swx.createpostdata(name, 1, "text", 1000003, "content", msg);
+                    resp = swx.post("utf-8", WeChatMsgSend.CONTENT_TYPE, (new WeChatUrlData()).getSendMessage_Url(), postdata, token);
+                    System.out.println("请求数据======>" + postdata);
+                    System.out.println("发送微信的响应数据======>" + resp);
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
