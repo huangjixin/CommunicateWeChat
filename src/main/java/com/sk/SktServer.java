@@ -14,14 +14,19 @@ import java.util.concurrent.Executors;
  */
 public class SktServer {
 
-    public void startSktServer() throws IOException {
+    public void startSktServer(String []users) throws IOException {
         ServerSocket serverSocket = new ServerSocket(20034);
         // 创建线程池
         ExecutorService exec = Executors.newCachedThreadPool();
         try {
             while (true) {
                 Socket socket = serverSocket.accept();
-                exec.execute(new SingleSktServer(socket));
+                SingleSktServer singleSktServer = new SingleSktServer(socket);
+                if(users.length>0){
+                    singleSktServer.users = users;
+                }
+
+                exec.execute(singleSktServer);
             }
         } finally {
             serverSocket.close();
@@ -30,12 +35,13 @@ public class SktServer {
 
     public static void main(String args[]) throws IOException {
         SktServer sktServer = new SktServer();
-        sktServer.startSktServer();
+        sktServer.startSktServer(args);
     }
 
     class SingleSktServer implements Runnable {
 
         private Socket socket;
+        public String []users = {"HuangJixin","XuYanhong1","ZhangZhicheng"};
 
         public SingleSktServer(Socket socket) {
             this.socket = socket;
@@ -79,8 +85,8 @@ public class SktServer {
                 ZipUtil.ZipFileAndEncrypt("/Users/pengchenyi/Downloads/encrypt", "version.zip", "szhbyjs");
 
 
-                String []users = {"HuangJixin","XuYanhong1","ZhangZhicheng"};
-                this.sendToWechat(users,"Hello，world");
+
+                this.sendToWechat(users,info);
             } catch (IOException e) {
                 e.printStackTrace();
             } finally {
