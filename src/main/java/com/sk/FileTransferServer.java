@@ -84,8 +84,14 @@ public class FileTransferServer extends ServerSocket {
                 if(!directory.exists()) {
                     directory.mkdir();
                 }else{
-                    directory.delete();
-                    directory.mkdir();
+                    String[]files =  directory.list();
+                    for(int i=0;i<files.length;i++){
+                        String tempFile = files[i];
+                        File f = new File("/Users/pengchenyi/Downloads/FTCache/"+tempFile);
+                        if(f.isFile()){
+                            f.delete();
+                        }
+                    }
                 }
 
                 File file = new File(directory.getAbsolutePath() + File.separatorChar + fileName);
