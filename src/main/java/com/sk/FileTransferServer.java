@@ -1,8 +1,12 @@
 package com.sk;
 
+import com.ultrapower.umap.entity.factor.WeChatMsgSend;
+import com.wechat.send.WeChatUrlData;
+
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.math.RoundingMode;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -78,7 +82,11 @@ public class FileTransferServer extends ServerSocket {
                 File directory = new File("/Users/pengchenyi/Downloads/FTCache");
                 if(!directory.exists()) {
                     directory.mkdir();
+                }else{
+                    directory.delete();
+                    directory.mkdir();
                 }
+
                 File file = new File(directory.getAbsolutePath() + File.separatorChar + fileName);
                 fos = new FileOutputStream(file);
  
@@ -90,6 +98,23 @@ public class FileTransferServer extends ServerSocket {
                     fos.flush();
                 }
                 System.out.println("======== 文件接收成功 [File Name：" + fileName + "] [Size：" + getFormatFileSize(fileLength) + "] ========");
+
+                ZipUtil.ZipFileAndEncrypt("/Users/pengchenyi/Downloads/FTCache", "apk.zip", "szhbyjs");
+
+                WeChatMsgSend swx = new WeChatMsgSend();
+                try {
+                    String token = swx.getToken("wwdf8f60f186c3bdbf","I0DWzXr2ZkU8jCOhjy6TlxkPvJUndldKAw5qakEMIXI");
+                    System.out.println("获取到的token======>" + token);
+
+                    String postdata = swx.createpostdata("HuangJiXin",1, "text", 1000003, "content","路径：/Users/pengchenyi/Downloads/FTCache，apk.zip压缩包已经生成");
+                    String resp = swx.post("utf-8", WeChatMsgSend.CONTENT_TYPE,(new WeChatUrlData()).getSendMessage_Url(), postdata, token);
+                    System.out.println("请求数据======>" + postdata);
+                    System.out.println("发送微信的响应数据======>" + resp);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
             } catch (Exception e) {
                 e.printStackTrace();
             } finally {

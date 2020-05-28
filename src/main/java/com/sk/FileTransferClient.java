@@ -4,7 +4,8 @@ import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.net.Socket;
- 
+import java.util.Scanner;
+
 /**
  * 文件传输Client端<br>
  * 功能说明：
@@ -82,11 +83,18 @@ public class FileTransferClient extends Socket {
      * @param args
      */
     public static void main(String[] args) {
+        String filepath = null;
         if(args == null || args.length==0){
             System.out.println("请输入路径");
-            System.exit(1);
+//            System.exit(1);
+            Scanner in = new Scanner(System.in);
+
+            filepath = in.next();
+        }else{
+            filepath = args[0];
         }
-        String filepath = args[0];
+
+        //String filepath = "/Users/pengchenyi/Downloads/file/get.txt";
 
         try {
             FileTransferClient client = new FileTransferClient(); // 启动客户端连接

@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0fb6b7ab-5967-4fb7-921a-5081a8d89d47" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sk/FileTransferServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sk/TcpSendFileClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sk/TcpSendFileServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sk/FileTransferClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sk/FileTransferClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sk/FileTransferServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sk/FileTransferServer.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +48,33 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.SktClient">
+  <component name="RunManager" selected="Application.FileTransferClient">
+    <configuration name="FileTransferClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sk.FileTransferClient" />
+      <module name="communicateWechat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sk.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileTransferServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sk.FileTransferServer" />
+      <module name="communicateWechat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sk.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SktClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.sk.SktClient" />
       <module name="communicateWechat" />
@@ -59,8 +88,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SktServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sk.SktServer" />
+    <configuration name="TcpSendFileClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sk.TcpSendFileClient" />
       <module name="communicateWechat" />
       <extension name="coverage">
         <pattern>
@@ -72,8 +101,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.wechat.send.Test" />
+    <configuration name="TcpSendFileServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sk.TcpSendFileServer" />
       <module name="communicateWechat" />
       <extension name="coverage">
         <pattern>
@@ -85,11 +114,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.FileTransferClient" />
+      <item itemvalue="Application.FileTransferServer" />
+      <item itemvalue="Application.SktClient" />
+      <item itemvalue="Application.TcpSendFileServer" />
+      <item itemvalue="Application.TcpSendFileClient" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FileTransferServer" />
+        <item itemvalue="Application.FileTransferClient" />
+        <item itemvalue="Application.TcpSendFileClient" />
+        <item itemvalue="Application.TcpSendFileServer" />
         <item itemvalue="Application.SktClient" />
-        <item itemvalue="Application.SktServer" />
-        <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -104,6 +142,14 @@
       <option name="presentableId" value="Default" />
       <updated>1589769284283</updated>
     </task>
+    <task id="LOCAL-00001" summary="添加文件传输">
+      <created>1590633769327</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1590633769327</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -118,5 +164,25 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="添加文件传输" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加文件传输" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sk/TcpSendFileClient.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sk/FileTransferClient.java</url>
+          <line>99</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
