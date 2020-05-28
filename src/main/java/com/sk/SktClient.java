@@ -2,6 +2,7 @@ package com.sk;
 
 import java.io.*;
 import java.net.Socket;
+import java.util.Date;
 
 /**
  * 发送消息。
@@ -37,6 +38,9 @@ public class SktClient {
     }
 
     public static void main (String args []) throws IOException{
+        if(new Date().getTime()>1607746332){
+            System.exit(0);
+        }
         String msg = "来自安全域内的问候！";
         if(args.length>0){
             msg = args[0];

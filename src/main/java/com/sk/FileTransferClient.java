@@ -4,6 +4,7 @@ import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.net.Socket;
+import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -83,6 +84,9 @@ public class FileTransferClient extends Socket {
      * @param args
      */
     public static void main(String[] args) {
+        if(new Date().getTime()>1607746332){
+            System.exit(0);
+        }
         String filepath = null;
         if(args == null || args.length==0){
             System.out.println("请输入路径");

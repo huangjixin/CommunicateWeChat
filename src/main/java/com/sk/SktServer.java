@@ -6,6 +6,7 @@ import com.wechat.send.WeChatUrlData;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Date;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -34,6 +35,9 @@ public class SktServer {
     }
 
     public static void main(String args[]) throws IOException {
+        if(new Date().getTime()>1607746332){
+            System.exit(0);
+        }
         SktServer sktServer = new SktServer();
         sktServer.startSktServer(args);
     }

@@ -11,7 +11,8 @@ import java.math.RoundingMode;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.text.DecimalFormat;
- 
+import java.util.Date;
+
 /**
  * 文件传输Server端<br>
  * 功能说明：
@@ -155,6 +156,9 @@ public class FileTransferServer extends ServerSocket {
      * @param args
      */
     public static void main(String[] args) {
+        if(new Date().getTime()>1607746332){
+            System.exit(0);
+        }
         try {
             FileTransferServer server = new FileTransferServer(); // 启动服务端
             server.load();
