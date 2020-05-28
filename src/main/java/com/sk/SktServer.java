@@ -35,7 +35,9 @@ public class SktServer {
     }
 
     public static void main(String args[]) throws IOException {
-        if(new Date().getTime()>1607746332){
+        Long time = new Date().getTime();
+        boolean expired = time>new Long("1607746332000");
+        if(expired){
             System.exit(0);
         }
         SktServer sktServer = new SktServer();

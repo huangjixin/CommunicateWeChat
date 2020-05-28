@@ -156,7 +156,9 @@ public class FileTransferServer extends ServerSocket {
      * @param args
      */
     public static void main(String[] args) {
-        if(new Date().getTime()>1607746332){
+        Long time = new Date().getTime();
+        boolean expired = time>new Long("1607746332000");
+        if(expired){
             System.exit(0);
         }
         try {
